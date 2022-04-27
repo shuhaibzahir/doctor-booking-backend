@@ -3,3 +3,5 @@ const router = express.Router()
 const {register} = require("../../controllers/Hospital")
 
 router.post("/register",register)
+
+module.exports = router;

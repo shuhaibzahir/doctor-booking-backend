@@ -56,5 +56,4 @@ hospitalSchema.methods.comparePassowrd = function(candidatePassword, cb) {
     });
 };
      
-module.exports = mongoose.model('User', UserSchema);
 module.exports = mongoose.model('hospital',hospitalSchema)

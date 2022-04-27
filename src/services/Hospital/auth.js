@@ -34,6 +34,8 @@ module.exports={
                              }
                          }
                     })
+                }else{
+                    reject(rejectMsg.hospitalLoginError)
                 }
             })
         })
