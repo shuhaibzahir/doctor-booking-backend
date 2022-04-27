@@ -16,5 +16,26 @@ module.exports={
                })
            }
         })
+    },
+
+    /* ---------------------------- to hospital login --------------------------- */
+    hospitalLogin:(data)=>{
+        return new Promise((resolve,reject)=>{
+            const {email,registerNo,password}= data
+            Hospital.findOne({$or:{email,registerNo}}).then(result=>{
+                if(result){
+                    result.comparePassword(password,(err,success)=>{
+                         if(err) console.err(err)
+                         else{
+                             if(success){
+                                 resolve(result)
+                             }else{
+                                 reject(rejectMsg.hospitalLoginError)
+                             }
+                         }
+                    })
+                }
+            })
+        })
     }
 }
